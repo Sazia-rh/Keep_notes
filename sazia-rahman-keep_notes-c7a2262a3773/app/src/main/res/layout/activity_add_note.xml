@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNoteActivity">
+
+         <androidx.constraintlayout.utils.widget.MotionLabel
+             android:id="@+id/MotionLabelTimestamp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Last updated:"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintBottom_toTopOf="@+id/textInputLayoutTitle"
+             android:layout_marginTop="20dp"
+             android:layout_marginStart="30dp"
+             android:layout_marginEnd="30dp"
+             />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            app:layout_constraintTop_toTopOf="@+id/MotionLabelTimestamp"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayoutNotes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            tools:ignore="UnknownId">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/TextInputEditTextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Notes"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutTitle"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+
+            >
+<!--            <ScrollView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/TextInputEditTextNotes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:maxLines="10"
+                android:scrollbars="vertical" />
+<!--        </ScrollView>-->
+        </com.google.android.material.textfield.TextInputLayout>
+
+         <com.google.android.material.button.MaterialButton
+            android:id="@+id/MaterialButtonSaveNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save"
+             android:layout_marginEnd="30dp"
+             android:layout_marginStart="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNotes"
+            android:layout_marginTop="20dp"
+            />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
